@@ -1,5 +1,9 @@
 ---
-- name: Install Git
-  win_chocolatey:
-    name: git
-    state: present
+- hosts: all
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Install Git
+      win_chocolatey:
+        name: git
+        state: present
